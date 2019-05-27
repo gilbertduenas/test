@@ -3,7 +3,7 @@ let accessToken = "pk.eyJ1IjoiYnJ5YW5sb3dlIiwiYSI6ImNqZ3p2bThxNTA4M3Yyd25vdGQxY2
 
 let outdoorsMap = L.tileLayer(outdoors+accessToken);
 
-let earthquakeUrl = "http://gilbertduenas.com/data/geojson.json";
+let earthquakeUrl = "test.json";
 // let earthquakeUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
 
@@ -20,7 +20,7 @@ d3.json(earthquakeUrl, function(data) {
     for (var i=0, ii=data.features.length; i<ii; i++) {
       let location = data.features[i].geometry.coordinates;
       console.log(location);
-      
+
       if (location) {
         heatArray.push([location[1], location[0]])
       };
